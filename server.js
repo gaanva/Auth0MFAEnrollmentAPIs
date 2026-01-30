@@ -1,11 +1,13 @@
 require('dotenv').config();
 require('@aikidosec/firewall');
 const express = require('express');
+const helmet = require('helmet');
 const axios = require('axios');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 
 const app = express();
+app.use(helmet());
 
 // Middleware
 app.use(bodyParser.json());
